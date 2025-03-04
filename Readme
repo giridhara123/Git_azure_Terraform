@@ -7,4 +7,9 @@
     2. Configure backend for StateFile is using Remote State
     3. Download Modules If any are used in the code
 
-## AZURE CreDETIALS for terraform
+## AZURE CreDETIALS for terraform using azure service principle
+- ### Bash shell
+   export ARM_CLIENT_ID="......"
+   export ARM_CLIENT_SCERET ="..."
+   export ARM_TENANT_ID="..."
+   export ARM_SUBSCRIPTION_ID="....."
