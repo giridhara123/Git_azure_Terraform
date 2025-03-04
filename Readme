@@ -1,0 +1,9 @@
+# Repo for using Terraform Automation with Azure cloud
+
+## Terraform Commands
+ - what Terraform Init Will do?
+  - It will perform following actions:
+    1. Download Nessasary Provider Plugins
+    2. Configure backend for StateFile is using Remote State
+    3. Download Modules If any are used in the code
+    
