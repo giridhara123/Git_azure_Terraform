@@ -9,7 +9,15 @@ terraform {
       version = "5.89.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "rg1"
+    storage_account_name = "tfstaterg1"
+    container_name       = "tfstate"
+    key                  = "tfstaterg1"
+  }
 }
+
 
 provider "azurerm" {
   # Configuration options
