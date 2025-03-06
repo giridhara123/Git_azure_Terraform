@@ -24,7 +24,7 @@ provider "azurerm" {
   # Configuration options
   features {
     # we caan add azure credentials
-
+    #
   }
 }
 provider "aws" {
