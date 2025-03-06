@@ -1,4 +1,5 @@
 terraform {
+  required_version = "1.11.0"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -23,7 +24,7 @@ provider "azurerm" {
   # Configuration options
   features {
     # we caan add azure credentials
-
+    #
   }
 }
 provider "aws" {
