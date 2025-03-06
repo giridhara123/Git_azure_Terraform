@@ -13,3 +13,9 @@
    export ARM_CLIENT_SCERET ="..."
    export ARM_TENANT_ID="..."
    export ARM_SUBSCRIPTION_ID="....."
+
+   # 2.
+   - how to share code between the user
+   - how to reslove git conflits
+   - how to avoid state file corruption if multiple users apply chnages at same time
+   
