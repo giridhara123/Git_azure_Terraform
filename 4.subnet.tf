@@ -1,32 +1,18 @@
 #esatus vnet1 subnets
-resource "azurerm_subnet" "subnet1" {
-  name                 = "${azurerm_virtual_network.vnet1.name}-subnet-1"
+resource "azurerm_subnet" "subnets" {
+  count                = 2
+  name                 = "${azurerm_virtual_network.vnet1.name}-subnet-${count.index + 1}"
   resource_group_name  = azurerm_resource_group.rg1.name
   virtual_network_name = azurerm_virtual_network.vnet1.name
-  address_prefixes     = ["10.45.1.0/24"]
-
+  address_prefixes     = [element(var.vnet1_subnet_address_prefixes, count.index)]
 }
-resource "azurerm_subnet" "subnet2" {
-  name                 = "${azurerm_virtual_network.vnet1.name}-subnet-2"
-  resource_group_name  = azurerm_resource_group.rg1.name
-  virtual_network_name = azurerm_virtual_network.vnet1.name
-  address_prefixes     = ["10.45.2.0/24"]
 
-}
+
 # adding subnets in west us vNet2
-resource "azurerm_subnet" "vnet2-subnet1" {
-  name                 = "${azurerm_virtual_network.vnet2.name}-subnet-1"
+resource "azurerm_subnet" "vnet2-subnets" {
+  count                = 2
+  name                 = "${azurerm_virtual_network.vnet2.name}-subnet-${count.index + 1}"
   resource_group_name  = azurerm_resource_group.rg1.name
   virtual_network_name = azurerm_virtual_network.vnet2.name
-  address_prefixes     = ["10.46.1.0/24"]
-
+  address_prefixes     = [element(var.vnet2_subnet_address_prefixes, count.index)]
 }
-resource "azurerm_subnet" "vnet2-subnet2" {
-  name                 = "${azurerm_virtual_network.vnet2.name}-subnet-2"
-  resource_group_name  = azurerm_resource_group.rg1.name
-  virtual_network_name = azurerm_virtual_network.vnet2.name
-  address_prefixes     = ["10.46.2.0/24"]
-
-}
-
-

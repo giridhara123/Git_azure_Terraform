@@ -9,7 +9,7 @@ resource "azurerm_network_security_group" "nsg1" {
 
   tags = {
     environment = "Production"
-    project = "Alpha"
+    project     = "Alpha"
   }
 }
 #nsg rules for nsg1 - inbound

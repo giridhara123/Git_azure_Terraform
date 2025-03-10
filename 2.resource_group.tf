@@ -1,8 +1,10 @@
 resource "azurerm_resource_group" "rg1" {
-  name     = "rg1"
-  location = "eastus"
+  name     = local.rg1_name
+  location = var.location
   tags = {
-    Environment = " Development"
+    Environment = var.environment
+    project     = var.project
   }
 
 }
+
